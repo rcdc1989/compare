@@ -1,0 +1,45 @@
+<html>
+
+<head>
+
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+ 
+<script type="text/javascript">
+  $(function() {
+        $( "#sortable" ).sortable({
+            placeholder: "ui-state-highlight",
+            cursor: 'crosshair',
+            update: function(event, ui) {
+                var answer_keys = $("#sortable").sortable('toArray');
+                alert(answer_keys.join(","));
+                $("#answer_keys").val(answer_keys.join(","));
+            }
+        });
+        $( "#sortable" ).disableSelection();
+    });
+</script>
+    
+</head> 
+  
+
+<body>
+<form action="" method="POST">
+ 
+<ul id="sortable">
+  <li id="1" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+  <li id="2" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+  <li id="3" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+  <li id="4" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+  <li id="5" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+  <li id="6" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+  <li id="7" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+</ul>
+<div style="clear:both;"></div>
+<input id="answer_keys" name="answer_keys"  type="hidden" />
+<input name="Submit" value="RE-ORDER" type="submit" />
+</form>
+
+</body>
+
+</html>

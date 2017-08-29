@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+   
+<div class="container">
+  <h1>Question Number {{game.current_index}}: {{question.title}}</h1>
+  <p>{{question.prompt}}</p>
+  
+  <h3>Your Score: {{score}} / 3</h3>
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th> Correct Order </th>  
+        <th> Your Response </th>  
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <ol>
+                {% for item in question["correct_order"] %}  
+                        <li>{{item}}</li>
+                {% endfor %}
+              </ol>
+            </td>
+            <td>
+              <ol>
+                {% for item in question["user_response"] %}  
+                        <li>{{item}}</li>
+                {% endfor %}
+              </ol>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th></th>  
+        {% for item in question["correct_order"] %}  
+            <th>{{item}}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td>Actual Values</td>  
+        {% for item in question["values"] %}  
+            <td>{{item}}</td>
+        {% endfor %}
+        </tr>
+        <tr>
+        <td>Sources</td>  
+        {% for item in question["sources"] %}  
+            <td><a href="{{item}}">{{item[8:]}}</a></td>
+        {% endfor %}
+        </tr>        
+    </tbody>
+  </table>
+</div>
+
+<form role="form" method="POST">
+  
+  {% if game_over %}
+    <button type="submit" class="btn btn-lg btn-success" align="center">Game Summary</button>
+  {% else %}
+    <button type="submit" class="btn btn-lg btn-primary" align="center">Next Question</button>
+  {% endif %}  
+  
+</form>
+{% endblock %}

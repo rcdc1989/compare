@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  
+  <style>
+    #sortable { list-style-type: none; margin: 0; padding: 0; width: 40%; }
+    #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+    #sortable li span { position: absolute; margin-left: -1.3em; }
+  </style>
+
+  <script type="text/javascript">
+    $(function() {
+          $( "#sortable" ).sortable({
+              placeholder: "ui-state-highlight",
+              revert: 'true',
+              cursor: 'grab',
+              update: function(event, ui) {
+                  var answer_keys = $("#sortable").sortable('toArray');
+                  $("#answer_keys").val(answer_keys.join(","));
+              }
+          });
+          $( "#sortable" ).disableSelection();
+      });
+  </script>
+    
+</head>
+
+<body>
+<form action="" method="POST">
+ 
+<ul id="sortable">
+  <li id="1" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+  <li id="2" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+  <li id="3" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+  <li id="4" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+  <li id="5" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+  <li id="6" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+  <li id="7" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+</ul>
+<div style="clear:both;"></div>
+<input id="answer_keys" name="answer_keys"  type="hidden" />
+<input name="Submit" value="RE-ORDER" type="submit" />
+</form>
+
+</body>
+</html>
+ 
+ 
+ 
+ 

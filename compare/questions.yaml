@@ -1,0 +1,115 @@
+- title: cities of the north
+  prompt: Arrange in order of ascending population
+  category: geography
+  items: 
+  - huge city
+  - medium city
+  - small city
+  - big city
+  correct_order:
+  - small city
+  - medium city
+  - big city
+  - huge city
+  values:
+  - 100000
+  - 500000
+  - 1000000
+  - 5000000
+  sources:
+  - https://www.link.ca
+  - https://www.source.com
+  - https://www.wikipedia.org/this
+  - https://www.newspaper.net
+- title: Beatles Height
+  prompt: Arrange in order of ascending height
+  category: pop culture
+  items: 
+  - tall paul
+  - tiny ringo
+  - average george
+  - huge john
+  correct_order:
+  - tiny ringo
+  - average george
+  - tall paul
+  - huge john
+  values:
+  - 100000
+  - 500000
+  - 1000000
+  - 5000000
+  sources:
+  - https://www.link.ca
+  - https://www.source.com
+  - https://www.wikipedia.org/this
+  - https://www.newspaper.net
+- title: Numbers
+  prompt: Put these numbers in order
+  category: science
+  items: 
+  - 3
+  - 1
+  - 4
+  - 2
+  correct_order:
+  - 1
+  - 2
+  - 3
+  - 4
+  values:
+  - 100000
+  - 500000
+  - 1000000
+  - 5000000
+  sources:
+  - https://www.link.ca
+  - https://www.source.com
+  - https://www.wikipedia.org/this
+  - https://www.newspaper.net
+- title: Letters
+  prompt: Put the following in alphabetical order
+  category: science
+  items: 
+  - b
+  - d
+  - a
+  - c
+  correct_order:
+  - a
+  - b
+  - c
+  - d
+  values:
+  - 100000
+  - 500000
+  - 1000000
+  - 5000000
+  sources:
+  - https://www.link.ca
+  - https://www.source.com
+  - https://www.wikipedia.org/this
+  - https://www.newspaper.net
+- title: Civilizations
+  prompt: Put the following in chronological order
+  category: History
+  items: 
+  - Ancient Greece
+  - Roman Empire
+  - Ancient Egypt
+  - Medieval Europe
+  correct_order:
+  - Ancient Egypt
+  - Ancient Greece
+  - Roman Empire
+  - Medieval Europe
+  values:
+  - 100000
+  - 500000
+  - 1000000
+  - 5000000
+  sources:
+  - https://www.link.ca
+  - https://www.source.com
+  - https://www.wikipedia.org/this
+  - https://www.newspaper.net

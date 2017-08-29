@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form role="form" method="POST">
+<section>
+  <h1>Question {{game.current_index}}: {{question.title}} </h1>
+  <h2>{{question.prompt}}</h2>  
+</section>
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        {% for item in question["items"] %}  
+          
+            <th>{{item}}</th>
+
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <select class="mdb-select" id="item1" name="item1">
+                    <option value="" disabled selected>Choose Position</option>
+                    <option value="1">1st (smallest)</option>
+                    <option value="2">2nd</option>
+                    <option value="3">3rd</option>
+                    <option value="4">4th (largest)</option>
+                </select>
+            </td>
+            <td>
+                <select class="mdb-select" id="item2" name="item2">
+                    <option value="" disabled selected>Choose Position</option>
+                    <option value="1">1st (smallest)</option>
+                    <option value="2">2nd</option>
+                    <option value="3">3rd</option>
+                    <option value="4">4th (largest)</option>
+                </select>
+            </td>
+            <td>
+                <select class="mdb-select" id="item3" name="item3">
+                    <option value="" disabled selected>Choose Position</option>
+                    <option value="1">1st (smallest)</option>
+                    <option value="2">2nd</option>
+                    <option value="3">3rd</option>
+                    <option value="4">4th (largest)</option>
+                </select>
+            </td>
+            <td>
+                <select class="mdb-select" id="item4" name="item4">
+                    <option value="" disabled selected>Choose Position</option>
+                    <option value="1">1st (smallest)</option>
+                    <option value="2">2nd</option>
+                    <option value="3">3rd</option>
+                    <option value="4">4th (largest)</option>
+                </select>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+    <button type="submit" class="btn btn-lg btn-success" align="center">Submit</button>
+</form>
+{% endblock %}

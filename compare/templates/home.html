@@ -1,0 +1,119 @@
+
+{% extends "base.html" %}
+{% block content %}
+
+<ul class="pager">
+
+    <form class="form" method="POST">
+    <div class="jumbotron">
+        <h1>Compare!</h1>
+        <p class="lead">
+          <b>Do you know you know stuff?</b> Great!
+        </p>
+        <p>
+          I'll give you four things, and you put them in order...by height, age, population—anything goes!
+        </p>
+        <p>
+          <button type="submit" class="btn btn-lg btn-success">Start Comparing!</button>
+          <!--<a class="btn btn-lg btn-success" href="#" role="button">Start Comparing!</a>-->
+        </p>
+      </div>
+      
+
+      <div class="form-check form-check-inline">
+        <h2>Choose a Game Type</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="text-center">
+                <input class="form-check-input" type="radio" name="game_type" id="question_limit_radio" value="question_limit" checked="">
+                Question Limit
+              </th>
+              <th class="text-center">
+                <input class="form-check-input" type="radio" name="game_type" id="time_limit_radio" value="time_limit">
+                Timed Game
+              </th>
+              <th class="text-center">
+                <input class="form-check-input" type="radio" name="game_type" id="marathon_radio" value="marathon">
+                Marathon
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td class="text-center">
+                      <select class="mdb-select" id="question_limit" name="question_limit">
+                          <option value="" disabled>Choose Question Limit</option>
+                          <option value="5" selected>5</option>
+                          <option value="10">10</option>
+                          <option value="15">15</option>
+                          <option value="20">20</option>
+                          <option value="25">20</option>
+                          <option value="30">30</option>
+                          <option value="40">40</option>
+                          <option value="50">50</option>
+                      </select>
+                  </td>
+                  <td class="text-center">
+                      <select class="mdb-select" id="time_limit" name="time_limit">
+                          <option value="" disabled selected>Choose Time Limit</option>
+                          <option value="5">5</option>
+                          <option value="10">10</option>
+                          <option value="15">15</option>
+                          <option value="20">20</option>
+                          <option value="25">20</option>
+                          <option value="30">30</option>
+                          <option value="40">40</option>
+                          <option value="50">50</option>
+                      </select>
+                  </td>
+                  <td class="text-center">
+                      <select class="mdb-select" id="strike_limit" name="strike_limit">
+                          <option value="" disabled selected>Choose Number of Strikes</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="5">5</option>
+                          <option value="10">10</option>
+                          <option value="15">15</option>
+                      </select>
+                  </td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <!--
+      <div>
+        <h2>Choose Categories of Questions</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+      </div>
+      
+      <div class="col-lg-6">
+          <input type="checkbox" value=""><h4>Geography</h4>
+          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+
+          <input type="checkbox" value=""><h4>Science</h4>
+          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+
+          <input type="checkbox" value=""><h4>History and Monuments</h4>
+          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+      </div>
+        <div class="col-lg-6">
+          <input type="checkbox" value=""><h4>Music and Film</h4>
+          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+
+          <input type="checkbox" value=""><h4>People</h4>
+          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+
+          <input type="checkbox" value=""><h4>Animals</h4>
+          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+        </div>
+
+      -->
+      
+    </form>
+</ul>
+
+{% endblock %}
