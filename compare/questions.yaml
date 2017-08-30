@@ -1,115 +1,161 @@
-- title: cities of the north
-  prompt: Arrange in order of ascending population
-  category: geography
+- title: Metropolises
+  prompt: Put these cities in order of descending population. (Largest to Smallest)
+  category: Geography
   items: 
-  - huge city
-  - medium city
-  - small city
-  - big city
-  correct_order:
-  - small city
-  - medium city
-  - big city
-  - huge city
-  values:
-  - 100000
-  - 500000
-  - 1000000
-  - 5000000
-  sources:
-  - https://www.link.ca
-  - https://www.source.com
-  - https://www.wikipedia.org/this
-  - https://www.newspaper.net
-- title: Beatles Height
-  prompt: Arrange in order of ascending height
-  category: pop culture
+  - Manila (Metro Manila), Philippines
+  - Mexico City (Valley of Mexico), Mexico
+  - Mumbai, India
+  - Moscow, Russia
+  values: 
+  - 24,123,000 in 2016 (4th largest in the world)
+  - 20,063,000 in 2016 (12th largest in the world)
+  - 17,712,000 in 2016 (13th largest in the world)
+  - 16,170,000 in 2016 (15th largest in the world)
+  sources: 
+  - http://www.worldatlas.com/citypops.htm
+  - http://www.worldatlas.com/citypops.htm
+  - http://www.worldatlas.com/citypops.htm
+  - http://www.worldatlas.com/citypops.htm
+  source_names: 
+  - World Atlas
+  - World Atlas
+  - World Atlas
+  - World Atlas
+- title: In The Top 11
+  prompt: Put these cities in order of descending population. (Largest to Smallest)
+  category: Geography
   items: 
-  - tall paul
-  - tiny ringo
-  - average george
-  - huge john
-  correct_order:
-  - tiny ringo
-  - average george
-  - tall paul
-  - huge john
-  values:
-  - 100000
-  - 500000
-  - 1000000
-  - 5000000
-  sources:
-  - https://www.link.ca
-  - https://www.source.com
-  - https://www.wikipedia.org/this
-  - https://www.newspaper.net
-- title: Numbers
-  prompt: Put these numbers in order
-  category: science
+  - Delhi, India
+  - Karachi, Pakistan
+  - New York City, USA
+  - Sao Paulo, Brazil
+  values: 
+  - 24,998,000 in 2016 (3rd largest in the world)
+  - 22,123,000 in 2016 (7th  largest in the world)
+  - 20,630,000 in 2016 (9th largest in the world)
+  - 20,365,000 in 2016 (11th largest in the world)
+  sources: 
+  - http://www.worldatlas.com/citypops.htm
+  - http://www.worldatlas.com/citypops.htm
+  - http://www.worldatlas.com/citypops.htm
+  - http://www.worldatlas.com/citypops.htm
+  source_names: 
+  - World Atlas
+  - World Atlas
+  - World Atlas
+  - World Atlas
+- title: L Is In The Air
+  prompt: Put these cities in order of descending population. (Largest to Smallest)
+  category: Geography
   items: 
-  - 3
-  - 1
-  - 4
-  - 2
-  correct_order:
-  - 1
-  - 2
-  - 3
-  - 4
-  values:
-  - 100000
-  - 500000
-  - 1000000
-  - 5000000
-  sources:
-  - https://www.link.ca
-  - https://www.source.com
-  - https://www.wikipedia.org/this
-  - https://www.newspaper.net
-- title: Letters
-  prompt: Put the following in alphabetical order
-  category: science
+  - Los Angeles, USA
+  - Lagos, Nigeria
+  - Lima, Peru
+  - London, UK
+  values: 
+  - 15,058,000 in 2016, (18th largest in the world)
+  - 13,123,000 in 2016 (24th largest in the world)
+  - 10,750,000 in 2016 (30th largest in the world)
+  - 10,236,000 in 2016 (32nd largest in the world)
+  sources: 
+  - http://www.worldatlas.com/citypops.htm
+  - http://www.worldatlas.com/citypops.htm
+  - http://www.worldatlas.com/citypops.htm
+  - http://www.worldatlas.com/citypops.htm
+  source_names: 
+  - World Atlas
+  - World Atlas
+  - World Atlas
+  - World Atlas
+- title: Chinese Cities
+  prompt: Put these cities in order of descending population. (Largest to Smallest)
+  category: Geography
   items: 
-  - b
-  - d
-  - a
-  - c
-  correct_order:
-  - a
-  - b
-  - c
-  - d
-  values:
-  - 100000
-  - 500000
-  - 1000000
-  - 5000000
-  sources:
-  - https://www.link.ca
-  - https://www.source.com
-  - https://www.wikipedia.org/this
-  - https://www.newspaper.net
-- title: Civilizations
-  prompt: Put the following in chronological order
-  category: History
+  - Shanghai, China
+  - Beijing, China
+  - Guangzhou-Foshan (Guangfo), China
+  - Hong Kong, China
+  values: 
+  - 23416000 in 2016 (6th largest in the world)
+  - 21,009,000 in 2016 (8th largest in the world)
+  - 20,597,000 in 2016 (10th largest in the world)
+  - 7,246,000 in 2016 (46th largest in the world)
+  sources: 
+  - http://www.worldatlas.com/citypops.htm
+  - http://www.worldatlas.com/citypops.htm
+  - http://www.worldatlas.com/citypops.htm
+  - http://www.worldatlas.com/citypops.htm
+  source_names: 
+  - World Atlas
+  - World Atlas
+  - World Atlas
+  - World Atlas
+- title: Cities of Europe
+  prompt: Put these cities in order of descending population. (Largest to Smallest)
+  category: Geography
   items: 
-  - Ancient Greece
-  - Roman Empire
-  - Ancient Egypt
-  - Medieval Europe
-  correct_order:
-  - Ancient Egypt
-  - Ancient Greece
-  - Roman Empire
-  - Medieval Europe
-  values:
-  - 100000
-  - 500000
-  - 1000000
-  - 5000000
-  sources:
-  - https://www.link.ca
-  - https://www.source.com
-  - https://www.wikipedia.org/this
-  - https://www.newspaper.net
+  - Paris, France
+  - London, UK
+  - Madrid, Spain
+  - Berlin, Germany
+  values: 
+  - 10,858,000 in 2016 (29th largest in the world)
+  - 10,236,000 in 2016 (32nd largest in the world)
+  - 6,171,000 in 2016 (56th largest in the world)
+  - 4,069,000 in 2016 (97th largest in the world)
+  sources: 
+  - http://www.worldatlas.com/citypops.htm
+  - http://www.worldatlas.com/citypops.htm
+  - http://www.worldatlas.com/citypops.htm
+  - http://www.worldatlas.com/citypops.htm
+  source_names: 
+  - World Atlas
+  - World Atlas
+  - World Atlas
+  - World Atlas
+- title: American Cities
+  prompt: Put these cities in order of descending population. (Largest to Smallest)
+  category: Geography
+  items: 
+  -  New York City
+  - Los Angeles, USA
+  - Miami, USA
+  -  Philadelphia, USA
+  values: 
+  - 20630000 in 2016 (9th largest in the world)
+  - 15,058,000 in 2016, (18th largest in the world)
+  - 5,764,000 in 2016 (63rd largest in the world)
+  - 5,570,000 in 2016 (69th largest in the world)
+  sources: 
+  - http://www.worldatlas.com/citypops.htm
+  - http://www.worldatlas.com/citypops.htm
+  - http://www.worldatlas.com/citypops.htm
+  - http://www.worldatlas.com/citypops.htm
+  source_names: 
+  - World Atlas
+  - World Atlas
+  - World Atlas
+  - World Atlas
+- title: Southern Cities
+  prompt: Put these cities in order of descending population. (Largest to Smallest)
+  category: Geography
+  items: 
+  -  Houston
+  - Sydney
+  -  Melbourne
+  - Cape Town
+  values: 
+  - 5,764,000 in 2016 (63rd largest in the world)
+  - 4,036,000 in 2016 (98th largest in the world)
+  - 3,906,000 in 2016 (100th largest in the world)
+  - 3,812,000 in 2016 (105th largest in the world)
+  sources: 
+  - http://www.worldatlas.com/citypops.htm
+  - http://www.worldatlas.com/citypops.htm
+  - http://www.worldatlas.com/citypops.htm
+  - http://www.worldatlas.com/citypops.htm
+  source_names: 
+  - World Atlas
+  - World Atlas
+  - World Atlas
+  - World Atlas

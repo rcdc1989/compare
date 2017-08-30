@@ -2,11 +2,58 @@
 
 {% block content %}
 
+<head>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    
+    <style>
+    #sortable {list-style-type: none; padding: 0; width: 40%;}
+    #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.em; height: 2.5em;}
+    #sortable li span { position: absolute; margin-left: -3em;}
+    </style>
+    
+    <script type="text/javascript">
+    $(function() {
+          $( "#sortable" ).sortable({
+              placeholder: "ui-state-highlight",
+              revert: 'true',
+              cursor: 'grab',
+              update: function(event, ui) {
+                  var answer_keys = $("#sortable").sortable('toArray');
+                  $("#answer_keys").val(answer_keys.join(","));
+              },
+              create: function(event, ui) {
+                  var answer_keys = $("#sortable").sortable('toArray');
+                  $("#answer_keys").val(answer_keys.join(","));
+              }
+          });
+          $( "#sortable" ).disableSelection();
+      });
+    </script>
+</head>
+
 <form role="form" method="POST">
-<section>
-  <h1>Question {{game.current_index}}: {{question.title}} </h1>
-  <h2>{{question.prompt}}</h2>  
-</section>
+    
+    <section>
+      <h1>Question {{game.current_index}}: {{question.title}} </h1>
+      <h2>{{question.prompt}}</h2>  
+    </section>
+  
+    <body>
+  
+
+    <ul id="sortable">
+        {% for item in question["items"] %}  
+          
+            <li id="{{item}}" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>{{item}}</li>
+    
+        {% endfor %}
+    </ul>
+    <div style="clear:both;"></div>
+    <input id="answer_keys" name="answer_keys"  type="hidden" />
+
 
 <div class="container">
   <table class="table">

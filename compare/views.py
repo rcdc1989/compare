@@ -32,7 +32,7 @@ def home_post():
     
     if game.game_type == "question_limit":
         game.question_limit = int(request.form["question_limit"])
-        game.select_questions(question_limit = request.form["question_limit"])
+        game.select_questions(question_limit = game.question_limit)
 
     elif game.game_type == "time_limit":
         game.time_limit = int(request.form["time_limit"])
@@ -77,11 +77,14 @@ def game_post():
     question = game.current_question
     items_as_given = question["items"]
     
+    
+    answer_keys = request.form["answer_keys"]
+    print(answer_keys.split(','))
+    
     #here we populate a list according to the values given by user
     user_response = [0]*4 # initialize empty list to store user responses
     for i in range(4):
         user_input = request.form["item{}".format(i+1)] #get index given by user
-        print(user_input)
         user_response[int(user_input) -1]= items_as_given[i] 
     
     print(user_response)

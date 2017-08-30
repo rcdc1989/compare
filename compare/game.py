@@ -1,4 +1,5 @@
 import yaml
+import random
 
 class Game(object):
     current_game = None
@@ -41,6 +42,12 @@ class Game(object):
                              
         questions_file = open('compare/questions.yaml', 'r')
         self.questions = yaml.load(questions_file.read())
+        #randomize order
+        random.shuffle(self.questions)
+        
+        # if we are in a question limit game, choose 5 questions
+        if question_limit:
+                self.questions = self.questions[:question_limit-1]
         
     def determine_score(self, user_response, answer_key):
         #consider refatoring to only take the user response
