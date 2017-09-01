@@ -117,10 +117,10 @@
   prompt: Put these cities in order of descending population. (Largest to Smallest)
   category: Geography
   items: 
-  -  New York City
+  - New York City
   - Los Angeles, USA
   - Miami, USA
-  -  Philadelphia, USA
+  - Philadelphia, USA
   values: 
   - 20630000 in 2016 (9th largest in the world)
   - 15,058,000 in 2016, (18th largest in the world)
@@ -140,9 +140,9 @@
   prompt: Put these cities in order of descending population. (Largest to Smallest)
   category: Geography
   items: 
-  -  Houston
+  - Houston
   - Sydney
-  -  Melbourne
+  - Melbourne
   - Cape Town
   values: 
   - 5,764,000 in 2016 (63rd largest in the world)
