@@ -59,9 +59,7 @@ class Game(object):
             #....so we can change the the old one here
             random.shuffle(q['items'])
         
-    def determine_score(self, user_response):
-        #consider refatoring to only take the user response
-        #get the answer key from the current question
+    def evaluate_response(self, user_response):
         
         answer_key = self.current_question['correct_order']
         i = 0
@@ -74,8 +72,37 @@ class Game(object):
                 correct_positions += 1
             i += 1
         
+        #store the score in the question
+        self.current_question["score"] = score[correct_positions]
+        self.total_score = self.total_score + self.current_question["score"]
+        
         return score[correct_positions]
     
-    def shuffle_answers(self):
-        pass
+    def generate_category_breakdown (self):
+        
+        """
+        breakdown is a dict containing a pair values for each key
+        the first number is the number of points earned in that category
+        the second is the maximum number of points earned
+        """
+        category_breakdown = {}
+        category_score = 0
+        category_max = 0
+        category = ""
+        
+        #this could probably use a cleanup...
+        
+        #cycle through all questions
+        for question in self.current_game.questions:
+            category = question["category"]
+            print(category_breakdown.keys())
+            #if the category is in the dict, update appropriate record
+            if category in category_breakdown.keys():
+                category_score = category_breakdown[category][0] + question["score"]
+                category_max = category_breakdown[category][1] + 3 
+                category_breakdown[category][0] =  category_score
+                category_breakdown[category][1] = category_max
+            else: #otherwise, add a record
+                category_breakdown[category] = [question["score"], 3]
 
+        return category_breakdown

@@ -98,9 +98,15 @@
         <tr>
           <td>
               {% if game_over %}
-                <button type="submit" class="btn btn-lg btn-success btn-block" align="center">Game Summary</button>
+                <button type="submit" class="btn btn-lg btn-success btn-block" align="center">
+                  <span class="glyphicon glyphicon-stats" aria-hidden="false"></span>
+                  Game Summary
+                </button>
               {% else %}
-                <button type="submit" class="btn btn-lg btn-info btn-block" align="center">Next Question</button>
+                <button type="submit" class="btn btn-lg btn-info btn-block" align="center">
+                  <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="false"></span>
+                  Next Question
+                </button>
               {% endif %} 
           </td>
         </tr>

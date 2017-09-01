@@ -80,8 +80,6 @@ def game_post():
     print(answer_keys)
     question['user_response'] = answer_keys
     
-    flash("this is a test message")#oups...this isn't working
-    
     return redirect(url_for("show_answer"))
 
 @app.route("/show_answer")
@@ -92,18 +90,15 @@ def show_answer():
     question = game.current_question
     user_response = question["user_response"]
     
-    #scorekeeping
-    score = game.determine_score(user_response)
-    question["score"] = score
-    game.total_score = game.total_score + score 
-    
-    
+    #scorekeeping is done in evaluate response, score is stored in question
+    game.evaluate_response(user_response)
+     
     ###!!!!!will add logic for marathon and timed game
         
     return render_template("show_answer.html",
                             game=game,
                             question=question,
-                            score=score,
+                            score=game.current_question["score"],
                             game_over = game.game_over)
     
 @app.route("/show_answer", methods=['POST'])
@@ -120,14 +115,21 @@ def show_answer_post():
     
 @app.route("/game_summary")
 def game_summary():
+    
+    game = Game.current_game
+    print(game.generate_category_breakdown())
+    
     return render_template("game_summary.html",
                             game=Game.current_game)
                             
                             
 @app.route("/game_summary", methods=['POST'])
 def game_summary_post():
+    
     return redirect(url_for("home"))
     
+
+#this is a test route to get the sorting widget working
 @app.route("/test_jquery", methods=['GET', 'POST'])
 def test_jquery():
     

@@ -59,25 +59,30 @@
     </script>
 </head>
 
-<body>
     
 <form role="form" method="POST">
  
     <div class="progress">
       <div class="progress-bar" role="progressbar" style="width: {{(game.current_index/game.question_limit)*100}}%;" aria-valuenow="{{(game.current_index/game.question_limit)*100}}" aria-valuemin="0" aria-valuemax="100">{{game.current_index}} of {{game.question_limit}}</div>
     </div>
-        
+
+<div class="container">        
     <section>
       <h1>Question {{game.current_index}}: "{{question.title}}" </h1>
       <div class="alert alert-info" role="alert">
-      <strong>{{question.prompt}}</strong>
+      <span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="false"></span>
+      <strong>  {{question.prompt}}</strong>
       </div>
     </section>
         
   <table class="table">
     <tbody>
         <tr>
-            <td class="text-center">Largest</td>
+            <td class="text-center">
+                <h3>
+                <span class="glyphicon glyphicon-plus" aria-hidden="false"></span>
+                </h3>
+            </td>
         </tr>
         <tr>
             <td>
@@ -93,14 +98,23 @@
             </td>
         </tr>
         <tr>
-            <td class="text-center">Smallest</td>
+            <td class="text-center">
+                <h3>
+                <span class="glyphicon glyphicon-minus" aria-hidden="false"></span>
+                </h3>
+            </td>
         </tr>
         <tr>
-            <td><button type="submit" class="btn btn-lg btn-block btn-primary" >Submit</button></td>
+            <td>
+                <button type="submit" class="btn btn-lg btn-block btn-primary" >
+                <span class="glyphicon glyphicon-eye-open" aria-hidden="false"></span>
+                Submit
+                </button>
+            </td>
         </tr>
     </tbody>
   </table>
-
+</div>
 </form>
-</body>
+
 {% endblock %}
