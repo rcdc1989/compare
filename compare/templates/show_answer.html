@@ -17,26 +17,31 @@
         <th> Your Response </th>  
       </tr>
     </thead>
+    
+    
     <tbody>
-        <tr>
-            <td>
-              <ol>
-                {% for item in question["correct_order"] %}  
-                        <li>{{item}}</li>
-                {% endfor %}
-              </ol>
-            </td>
-            <td>
-              <ol>
-                {% for item in question["user_response"] %}  
-                        <li>{{item}}</li>
-                {% endfor %}
-              </ol>
-            </td>
+      {% for item in question["correct_order"] %}
+        {% if item == question.user_response[loop.index0] %}
+          <tr class="success">
+        {% else %}
+          <tr class="danger">
+        {% endif %}
+          
+          <td>
+              {{loop.index}}. {{item}}
+          </td>
+          <td>
+              {{loop.index}}. {{question.user_response[loop.index0]}}      
+          </td>
         </tr>
+      
+      {% endfor %}      
+      
     </tbody>
     
   </table>
+
+  <h3>In case you were wondering...</h3>
 
 
   <table class="table">
