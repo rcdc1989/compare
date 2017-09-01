@@ -1,5 +1,6 @@
 import yaml
 import random
+import copy
 
 class Game(object):
     current_game = None
@@ -26,14 +27,16 @@ class Game(object):
         self.total_score = 0
         
     def next_question(self):
+        
         self.current_question = self.questions[self.current_index]
         
         #check if we have questions left
         if self.current_index < len(self.questions):
             self.current_index += 1
-        else:
+        #if we are on second-to-last question, flag game as over            
+        if self.current_index == len(self.questions):
             self.game_over = True
-            
+        
         return self.current_question
 
     def select_questions(self, 
@@ -47,16 +50,24 @@ class Game(object):
         
         # if we are in a question limit game, choose 5 questions
         if question_limit:
-                self.questions = self.questions[:question_limit-1]
+                self.questions = self.questions[:question_limit]
+                
+        for q in self.questions:
+            print(q['items'])
+            q['correct_order'] = copy.copy(q['items']) #do this to create new list..
+            print(q['correct_order'])
+            #....so we can change the the old one here
+            random.shuffle(q['items'])
         
-    def determine_score(self, user_response, answer_key):
+    def determine_score(self, user_response):
         #consider refatoring to only take the user response
         #get the answer key from the current question
         
+        answer_key = self.current_question['correct_order']
         i = 0
         correct_positions = 0
         score = [0,1,2,3,3]
-        
+        print(answer_key)
         for item in user_response:
     
             if item == answer_key[i]:

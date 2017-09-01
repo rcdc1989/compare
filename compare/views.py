@@ -62,7 +62,7 @@ def game_get():
     
     return render_template("game.html", 
                             game=game, 
-                            question=question
+                            question=question,
                             )
 
 @app.route("/game", methods=["POST"])
@@ -75,21 +75,10 @@ def game_post():
     """
     game = Game.current_game
     question = game.current_question
-    items_as_given = question["items"]
     
-    
-    answer_keys = request.form["answer_keys"]
-    print(answer_keys.split(','))
-    
-    #here we populate a list according to the values given by user
-    user_response = [0]*4 # initialize empty list to store user responses
-    for i in range(4):
-        user_input = request.form["item{}".format(i+1)] #get index given by user
-        user_response[int(user_input) -1]= items_as_given[i] 
-    
-    print(user_response)
-    #store user input in the question dict
-    question['user_response'] = user_response
+    answer_keys = request.form["answer_keys"].split('++')
+    print(answer_keys)
+    question['user_response'] = answer_keys
     
     flash("this is a test message")#oups...this isn't working
     
@@ -101,17 +90,13 @@ def show_answer():
     #get our trusty game object back
     game = Game.current_game
     question = game.current_question
-    answer_key = question["correct_order"]
     user_response = question["user_response"]
     
     #scorekeeping
-    score = game.determine_score(user_response, answer_key)
+    score = game.determine_score(user_response)
     question["score"] = score
-    game.total_score += score 
+    game.total_score = game.total_score + score 
     
-    #check if game is over
-    if game.game_type == "question_limit" and game.current_index == game.question_limit:
-        game.game_over = True
     
     ###!!!!!will add logic for marathon and timed game
         

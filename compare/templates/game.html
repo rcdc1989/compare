@@ -9,9 +9,34 @@
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     
     <style>
-    #sortable {list-style-type: none; padding: 0; width: 40%;}
-    #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.em; height: 2.5em;}
+    #sortable { list-style-type: none; padding: 0; width: 40%;}
+    #sortable li { margin: 0.1em 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1em; height: 2.5em;}
     #sortable li span { position: absolute; margin-left: -3em;}
+    .colour1 {
+    background: #3399ff;
+    border: 1px solid #DDDDDD;
+    color: #333333;
+     }
+    .colour2 {
+    background: #84e184;
+    border: 1px solid #DDDDDD;
+    color: #333333;
+     }
+    .colour3 {
+    background: #ff9999;
+    border: 1px solid #DDDDDD;
+    color: #333333;
+     }
+    .colour4 {
+    background: #ffbf80;
+    border: 1px solid #DDDDDD;
+    color: #333333;
+     }
+     .center-block {
+           margin-left:auto;
+           margin-right:auto;
+           display:block;
+        }
     </style>
     
     <script type="text/javascript">
@@ -22,11 +47,11 @@
               cursor: 'grab',
               update: function(event, ui) {
                   var answer_keys = $("#sortable").sortable('toArray');
-                  $("#answer_keys").val(answer_keys.join(","));
+                  $("#answer_keys").val(answer_keys.join("++"));
               },
               create: function(event, ui) {
                   var answer_keys = $("#sortable").sortable('toArray');
-                  $("#answer_keys").val(answer_keys.join(","));
+                  $("#answer_keys").val(answer_keys.join("++"));
               }
           });
           $( "#sortable" ).disableSelection();
@@ -44,70 +69,36 @@
     <body>
   
 
-    <ul id="sortable">
-        {% for item in question["items"] %}  
-          
-            <li id="{{item}}" class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>{{item}}</li>
-    
-        {% endfor %}
-    </ul>
-    <div style="clear:both;"></div>
-    <input id="answer_keys" name="answer_keys"  type="hidden" />
-
-
-<div class="container">
   <table class="table">
-    <thead>
-      <tr>
-        {% for item in question["items"] %}  
-          
-            <th>{{item}}</th>
-
-        {% endfor %}
-      </tr>
-    </thead>
     <tbody>
         <tr>
+            <td class="text-center">Largest</td>
+        </tr>
+        <tr>
             <td>
-                <select class="mdb-select" id="item1" name="item1">
-                    <option value="" disabled selected>Choose Position</option>
-                    <option value="1">1st (smallest)</option>
-                    <option value="2">2nd</option>
-                    <option value="3">3rd</option>
-                    <option value="4">4th (largest)</option>
-                </select>
+                <ul id="sortable" class = "center-block">
+                    {% for item in question["items"] %}  
+                      
+                        <li id="{{item}}" class="ui-state-default colour{{loop.index}}"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>{{item}}</li>
+                
+                    {% endfor %}
+                </ul>
+                <div style="clear:both;"></div>
+                <input id="answer_keys" name="answer_keys"  type="hidden" />
             </td>
-            <td>
-                <select class="mdb-select" id="item2" name="item2">
-                    <option value="" disabled selected>Choose Position</option>
-                    <option value="1">1st (smallest)</option>
-                    <option value="2">2nd</option>
-                    <option value="3">3rd</option>
-                    <option value="4">4th (largest)</option>
-                </select>
-            </td>
-            <td>
-                <select class="mdb-select" id="item3" name="item3">
-                    <option value="" disabled selected>Choose Position</option>
-                    <option value="1">1st (smallest)</option>
-                    <option value="2">2nd</option>
-                    <option value="3">3rd</option>
-                    <option value="4">4th (largest)</option>
-                </select>
-            </td>
-            <td>
-                <select class="mdb-select" id="item4" name="item4">
-                    <option value="" disabled selected>Choose Position</option>
-                    <option value="1">1st (smallest)</option>
-                    <option value="2">2nd</option>
-                    <option value="3">3rd</option>
-                    <option value="4">4th (largest)</option>
-                </select>
-            </td>
+        </tr>
+        <tr>
+            <td class="text-center">Smallest</td>
+        </tr>
+        <tr>
+            <td><button type="submit" class="btn btn-lg btn-block btn-success btn-space" >Submit</button></td>
         </tr>
     </tbody>
   </table>
+
+<div class="row marketing">
+    
 </div>
-    <button type="submit" class="btn btn-lg btn-success" align="center">Submit</button>
+
 </form>
 {% endblock %}
