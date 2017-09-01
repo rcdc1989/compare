@@ -59,16 +59,21 @@
     </script>
 </head>
 
-<form role="form" method="POST">
+<body>
     
+<form role="form" method="POST">
+ 
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: {{(game.current_index/game.question_limit)*100}}%;" aria-valuenow="{{(game.current_index/game.question_limit)*100}}" aria-valuemin="0" aria-valuemax="100">{{game.current_index}} of {{game.question_limit}}</div>
+    </div>
+        
     <section>
-      <h1>Question {{game.current_index}}: {{question.title}} </h1>
-      <h2>{{question.prompt}}</h2>  
+      <h1>Question {{game.current_index}}: "{{question.title}}" </h1>
+      <div class="alert alert-info" role="alert">
+      <strong>{{question.prompt}}</strong>
+      </div>
     </section>
-  
-    <body>
-  
-
+        
   <table class="table">
     <tbody>
         <tr>
@@ -96,9 +101,6 @@
     </tbody>
   </table>
 
-<div class="row marketing">
-    
-</div>
-
 </form>
+</body>
 {% endblock %}
